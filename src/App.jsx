@@ -2,6 +2,7 @@ import {useState} from 'react';
 import AddTaskForm from './components/AddTaskForm.jsx';
 import UpdateForm from './components/UpdateForm.jsx';
 import ToDo from './components/ToDo.jsx';
+import Navbar from './components/Navbar.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -67,8 +68,9 @@ function App() {
   }
 
   return (
+    
     <div className="container App">
-
+    < Navbar/>
     <br /><br />
     <h2>To Do List App </h2>
     <br /><br />
@@ -88,9 +90,7 @@ function App() {
       />
     )}
 
-    
-
-    {toDo && toDo.length ? '' : 'No Tasks...'}
+     {toDo && toDo.length ? '' : 'No Tasks...'}
 
     <ToDo
       toDo={toDo}
@@ -100,6 +100,7 @@ function App() {
     />  
 
     </div>
+   
   );
 }
 
