@@ -6,9 +6,10 @@ const Footer = () => {
         <>
             <footer>
                 <p>Made by Airam Plasencia . Code on
-                    
-                        <span> GitHub.</span>
-                    
+
+                    <a href="https://github.com/Airam-Plasencia" target='_blank' rel="noopener noreferrer">
+                        GitHub
+                    </a>
                 </p>
             </footer>
         </>

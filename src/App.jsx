@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom'; 
 import AddTaskForm from './components/AddTaskForm.jsx';
 import UpdateForm from './components/UpdateForm.jsx';
 import ToDo from './components/ToDo.jsx';
@@ -10,21 +10,16 @@ import ItemDetails from "./pages/ItemDetails";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
 
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import './App.css';
 
 function App() {
-
-
+  
   const [toDo, setToDo] = useState([]);
-
-
   const [newTask, setNewTask] = useState('');
   const [updateData, setUpdateData] = useState('');
 
+  const location = useLocation(); 
 
   const addTask = () => {
     if (newTask) {
@@ -35,12 +30,10 @@ function App() {
     }
   }
 
-
   const deleteTask = (id) => {
     let newTasks = toDo.filter(task => task.id !== id)
     setToDo(newTasks);
   }
-
 
   const markDone = (id) => {
     let newTask = toDo.map(task => {
@@ -52,11 +45,9 @@ function App() {
     setToDo(newTask);
   }
 
-
   const cancelUpdate = () => {
     setUpdateData('');
   }
-
 
   const changeTask = (e) => {
     let newEntry = {
@@ -67,7 +58,6 @@ function App() {
     setUpdateData(newEntry);
   }
 
-
   const updateTask = () => {
     let filterRecords = [...toDo].filter(task => task.id !== updateData.id);
     let updatedObject = [...filterRecords, updateData]
@@ -76,46 +66,51 @@ function App() {
   }
 
   return (
-
     <div className="App">
-      < Navbar />
-      <br /><br />
-      <h2>To Do List App </h2>
-      <br /><br />
-
-      {updateData && updateData ? (
-        <UpdateForm
-          updateData={updateData}
-          changeTask={changeTask}
-          updateTask={updateTask}
-          cancelUpdate={cancelUpdate}
-        />
-      ) : (
-        <AddTaskForm
-          newTask={newTask}
-          setNewTask={setNewTask}
-          addTask={addTask}
-        />
+      <Navbar />
+      
+      
+      {location.pathname !== '/About' && (
+        <>
+          <br /><br />
+          <h2>To Do List App</h2>
+          <br /><br />
+          
+          {updateData && updateData ? (
+            <UpdateForm
+              updateData={updateData}
+              changeTask={changeTask}
+              updateTask={updateTask}
+              cancelUpdate={cancelUpdate}
+            />
+          ) : (
+            <AddTaskForm
+              newTask={newTask}
+              setNewTask={setNewTask}
+              addTask={addTask}
+            />
+          )}
+          
+          {toDo && toDo.length ? '' : 'No Tasks...'}
+          
+          <ToDo
+            toDo={toDo}
+            markDone={markDone}
+            setUpdateData={setUpdateData}
+            deleteTask={deleteTask}
+          />
+        </>
       )}
 
-      {toDo && toDo.length ? '' : 'No Tasks...'}
-
-      <ToDo
-        toDo={toDo}
-        markDone={markDone}
-        setUpdateData={setUpdateData}
-        deleteTask={deleteTask}
-      />
-
+      
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/About" element={<About />} />
         <Route path="/item/:id" element={<ItemDetails />} />
       </Routes>
-      < Footer />
 
+      <Footer />
     </div>
-
   );
 }
 

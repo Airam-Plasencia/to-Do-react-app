@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
-  
+
 
   return (
     <>
@@ -12,27 +13,27 @@ const Navbar = () => {
           <div >
             <a href="./">
               <img className="logo"
-                
+
                 src="./src/assets/img/logo_1.png"
                 alt="Logo"
               />
-            </a>   
+            </a>
           </div>
           <div className="nav-buttons">
-              <button className="nav-btn" type="button">
-                Home
-              </button>
-              <button className="nav-btn" type="button">
-                About
-              </button>
-           </div>
+            <Link to="/" className="nav-btn">  {/* Link a Home */}
+              Home
+            </Link>
+            <Link to="/About" className="nav-btn">  {/* Link a About */}
+              About
+            </Link>
+          </div>
 
           <button className="nav-log" type="button">
-          <img className="material-icons"
-                
-                src="./src/assets/img/person1.png"
-                alt="Logo-person"
-              />
+            <img className="material-icons"
+
+              src="./src/assets/img/person1.png"
+              alt="Logo-person"
+            />
           </button>
         </div>
       </div>

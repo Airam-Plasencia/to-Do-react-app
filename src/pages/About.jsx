@@ -4,11 +4,16 @@ const About = () => {
     return ( 
         <div>
             <h2>About</h2>
-            <p>A react to do app. Content is loaded from a JSON file.</p>
+            <p>A react to Do app. </p>
             <p>Created by Airam Plasencia</p>
-            <a href="https://github.com/Airam-Plasencia" target='_blank'>GitHub </a>      
+            <a href="https://github.com/Airam-Plasencia" target='_blank' rel="noopener noreferrer">
+                GitHub
+            </a>  
+            <a href="https://linkedin.com/in/airam-plasencia-mendoza-a71870121" target='_blank' rel="noopener noreferrer">
+                Linkedin
+            </a>      
         </div>
-     );
+    );
 }
  
 export default About;

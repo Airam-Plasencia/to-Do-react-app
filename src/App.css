@@ -13,6 +13,9 @@ body {
 .col {
   margin: 0px 50px ; 
 }
+.btn {
+margin-right: 20px;
+}
 
 /* Navbar */
 
@@ -127,4 +130,46 @@ footer {
   left: 0;
   bottom: 0;
   
+}
+
+.App-header {  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);  
+}
+
+#Dark {
+  background-color: #282c34;
+  color: white;
+}
+#Dark a{
+  color: white;
+}
+
+#Light {
+  background-color: #f2f4f6;
+  color:#0d3f67;
+}
+
+.list li{
+  display:inline-block;
+  padding-left:3px;
+  padding-right:3px;
+}
+/* Fin Modificado */
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
