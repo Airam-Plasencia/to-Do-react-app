@@ -28,7 +28,11 @@ const Navbar = () => {
            </div>
 
           <button className="nav-log" type="button">
-            <i className="material-icons">person</i>
+          <img className="material-icons"
+                
+                src="./src/assets/img/person1.png"
+                alt="Logo-person"
+              />
           </button>
         </div>
       </div>

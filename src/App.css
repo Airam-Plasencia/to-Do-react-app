@@ -5,6 +5,13 @@ body {
 
 .App {
   text-align: center;
+  margin: 0 ;
+}
+.row{
+  margin: 0px 80px;
+}
+.col {
+  margin: 0px 50px ; 
 }
 
 /* Navbar */
@@ -29,7 +36,9 @@ body {
 
 .nav-buttons {
   display: flex;
-  gap: 15px;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 20px;
 }
 
 .nav-btn {
@@ -43,15 +52,13 @@ body {
 }
 
 .nav-log {
-  background-color: rgb(78, 174, 204);
+  margin: 1100px; 
   border: none;
-  color: white;
-  border-radius: 30px;
-  padding: 10px;
-  margin: 880px;
-  font-size: 20px;
-  
 }
+.material-icons{
+  width: 50px;
+}
+
 
 .taskBg {
   background-color: #f8f6f6;
@@ -109,4 +116,15 @@ body {
 
 .mr-20 {
   margin-right: 20px;
+}
+
+footer {
+  text-align: center;
+  color: rgb(37, 34, 191);
+  width: 100%;
+  margin-top: auto;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  
 }
