@@ -9,6 +9,7 @@ import Footer from './components/Footer.jsx';
 import ItemDetails from "./pages/ItemDetails";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
+import Error404 from './pages/Error404';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -64,13 +65,14 @@ function App() {
     setToDo(updatedObject);
     setUpdateData('');
   }
-
+  const isErrorRoute = location.pathname === '*';
   return (
     <div className="App">
-      <Navbar />
+     
+     {!isErrorRoute && <Navbar />}
       
       
-      {location.pathname !== '/About' && (
+      {location.pathname !== '/About' && !isErrorRoute && (
         <>
           <br /><br />
           <h2>To Do List App</h2>
@@ -107,9 +109,10 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/About" element={<About />} />
         <Route path="/item/:id" element={<ItemDetails />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
 
-      <Footer />
+      {!isErrorRoute && <Footer />}
     </div>
   );
 }

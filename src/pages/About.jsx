@@ -3,7 +3,6 @@ import React from 'react';
 const About = () => {
     return ( 
         <div>
-            <h2>About</h2>
             <p>A react to Do app. </p>
             <p>Created by Airam Plasencia</p>
             <a href="https://github.com/Airam-Plasencia" target='_blank' rel="noopener noreferrer">

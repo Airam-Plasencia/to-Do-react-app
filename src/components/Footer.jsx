@@ -7,7 +7,7 @@ const Footer = () => {
             <footer>
                 <p>Made by Airam Plasencia . Code on
 
-                    <a href="https://github.com/Airam-Plasencia" target='_blank' rel="noopener noreferrer">
+                    <a href="https://github.com/Airam-Plasencia/to-Do-react-app" target='_blank' rel="noopener noreferrer">
                         GitHub
                     </a>
                 </p>
