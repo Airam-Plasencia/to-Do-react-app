@@ -10,13 +10,13 @@ import ItemDetails from "./pages/ItemDetails";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
 import Error404 from './pages/Error404';
-
+import taskList from '../tasks.json'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
   
-  const [toDo, setToDo] = useState([]);
+  const [toDo, setToDo] = useState(taskList);
   const [newTask, setNewTask] = useState('');
   const [updateData, setUpdateData] = useState('');
 
@@ -65,12 +65,11 @@ function App() {
     setToDo(updatedObject);
     setUpdateData('');
   }
+
   const isErrorRoute = location.pathname === '*';
   return (
     <div className="App">
-     
      {!isErrorRoute && <Navbar />}
-      
       
       {location.pathname !== '/About' && !isErrorRoute && (
         <>
@@ -104,7 +103,6 @@ function App() {
         </>
       )}
 
-      
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/About" element={<About />} />

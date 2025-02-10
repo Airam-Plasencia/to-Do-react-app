@@ -1,10 +1,4 @@
-[
-    {
-        "task": "Read the project ",
-        "completed": true
-    },
-    {
-        "task": "Create React application using Vite",
-        "completed": false
-    },
-]
+/* [
+    { "id": "1", "title": "Read the project", "status": true },
+    { "id": "2", "title": "Create React application using Vite", "status": false },
+] */
