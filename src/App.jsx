@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom'; 
+import { Routes, Route, useLocation } from 'react-router-dom';
 import AddTaskForm from './components/AddTaskForm.jsx';
 import UpdateForm from './components/UpdateForm.jsx';
 import ToDo from './components/ToDo.jsx';
@@ -15,12 +15,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
-  
+
   const [toDo, setToDo] = useState(taskList);
   const [newTask, setNewTask] = useState('');
   const [updateData, setUpdateData] = useState('');
 
-  const location = useLocation(); 
+  const location = useLocation();
 
   const addTask = () => {
     if (newTask) {
@@ -69,41 +69,12 @@ function App() {
   const isErrorRoute = location.pathname === '*';
   return (
     <div className="App">
-     {!isErrorRoute && <Navbar />}
-      
-      {location.pathname !== '/About' && !isErrorRoute && (
-        <>
-          <br /><br />
-          <h2>To Do List App</h2>
-          <br /><br />
-          
-          {updateData && updateData ? (
-            <UpdateForm
-              updateData={updateData}
-              changeTask={changeTask}
-              updateTask={updateTask}
-              cancelUpdate={cancelUpdate}
-            />
-          ) : (
-            <AddTaskForm
-              newTask={newTask}
-              setNewTask={setNewTask}
-              addTask={addTask}
-            />
-          )}
-          
-          {toDo && toDo.length ? '' : 'No Tasks...'}
-          
-          <ToDo
-            toDo={toDo}
-            markDone={markDone}
-            setUpdateData={setUpdateData}
-            deleteTask={deleteTask}
-          />
-        </>
-      )}
+      {!isErrorRoute && <Navbar />}
+
+
 
       <Routes>
+        <Route path="/" element={<><h2 className="App-list">To Do List App</h2><AddTaskForm newTask={newTask} setNewTask={setNewTask} addTask={addTask} /><ToDo toDo={toDo} markDone={markDone} setUpdateData={setUpdateData} deleteTask={deleteTask} /></>} />
         <Route path="/" element={<Dashboard />} />
         <Route path="/About" element={<About />} />
         <Route path="/item/:id" element={<ItemDetails />} />
