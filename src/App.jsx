@@ -6,6 +6,7 @@ import ToDo from './components/ToDo.jsx';
 import '../src/App.css'
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
+import Sidebar from './components/Sidebar.jsx';
 import ItemDetails from "./pages/ItemDetails";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
@@ -13,12 +14,17 @@ import Error404 from './pages/Error404';
 import taskList from '../tasks.json'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import ReactSwitch from 'react-switch';
 
 function App() {
 
   const [toDo, setToDo] = useState(taskList);
   const [newTask, setNewTask] = useState('');
   const [updateData, setUpdateData] = useState('');
+  const [checked, setChecked] = useState(false)
+  const handleSwitch = (nextChecked) => {
+    setChecked(nextChecked)
+  }
 
   const location = useLocation();
 
@@ -69,19 +75,22 @@ function App() {
   const isErrorRoute = location.pathname === '*';
   return (
     <div className="App">
-      {!isErrorRoute && <Navbar />}
+      <Sidebar />
+      <div className="main-content">
+        {!isErrorRoute && <Navbar />}
 
 
+        <Routes>
+          <Route path="/" element={<><h2 className="App-list">To Do List App</h2><AddTaskForm newTask={newTask} setNewTask={setNewTask} addTask={addTask} /><ToDo toDo={toDo} markDone={markDone} setUpdateData={setUpdateData} deleteTask={deleteTask} /></>} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/item/:id" element={<ItemDetails />} />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
 
-      <Routes>
-        <Route path="/" element={<><h2 className="App-list">To Do List App</h2><AddTaskForm newTask={newTask} setNewTask={setNewTask} addTask={addTask} /><ToDo toDo={toDo} markDone={markDone} setUpdateData={setUpdateData} deleteTask={deleteTask} /></>} />
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/item/:id" element={<ItemDetails />} />
-        <Route path="*" element={<Error404 />} />
-      </Routes>
+        <Footer />
 
-      {!isErrorRoute && <Footer />}
+      </div>
     </div>
   );
 }

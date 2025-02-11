@@ -19,22 +19,6 @@ const Navbar = () => {
               />
             </a>
           </div>
-          <div className="nav-buttons">
-            <Link to="/" className="nav-btn">  {/* Link a Home */}
-              Home
-            </Link>
-            <Link to="/About" className="nav-btn">  {/* Link a About */}
-              About
-            </Link>
-          </div>
-
-          <button className="nav-log" type="button">
-            <img className="material-icons"
-
-              src="./src/assets/img/person1.png"
-              alt="Logo-person"
-            />
-          </button>
         </div>
       </div>
     </>

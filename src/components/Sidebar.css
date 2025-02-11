@@ -1,0 +1,39 @@
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 70px; 
+    left: 0;
+    width: 180px; 
+    height: 100%; 
+    background-color: rgb(59, 99, 174);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 10px;
+    
+  }
+  
+  .sidebar-links {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.sidebar-link {
+    color: white;
+    text-decoration: none;
+    padding: 40px 10px;
+    margin: 40px 0 5px 0; 
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar-link:hover {
+    background-color: #0056b3;
+  }
+  
+  .main-content {
+    margin-left: 160px; 
+    padding: 20px;
+    padding-top: 70px; 
+  }
