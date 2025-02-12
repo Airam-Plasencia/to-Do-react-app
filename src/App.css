@@ -150,6 +150,29 @@ margin-right: 20px;
 .taskBg .iconsWrap span:hover {
   color: rgb(34, 82, 136);
 }
+
+/* ItemDetails */
+.back-to-task-btn {
+  background-color: #4CAF50;  
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-task-btn:hover {
+  background-color: #45a049;  
+}
+.details {
+  margin-top: 10px;
+}
+
 .viewDetailsIcon {
   width: 35px;
   height: 35px;
