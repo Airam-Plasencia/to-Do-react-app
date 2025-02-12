@@ -5,20 +5,24 @@ body {
 
 .App {
   text-align: center;
-  margin: 0 ;
+  margin: 0;
 }
+
 .App-list {
   text-align: center;
-  margin: 30px ;
+  margin: 30px;
 }
-.row{
+
+.row {
   margin: 0px 80px;
 }
+
 .col {
-  margin: 0px 50px ; 
+  margin: 0px 50px;
 }
+
 .btn {
-margin-right: 20px;
+  margin-right: 20px;
 }
 
 /* Navbar */
@@ -26,9 +30,10 @@ margin-right: 20px;
 .navbar {
   width: 100%;
   background-color: rgb(59, 99, 174);
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 0;  
+  left: 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -40,6 +45,7 @@ margin-right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 10px;
 }
 
 .nav-buttons {
@@ -61,40 +67,43 @@ margin-right: 20px;
 }
 
 .nav-log {
-  margin: 1100px; 
+  margin: 1100px;
   border: none;
-  background: none;  
-  padding: 0;  
+  background: none;
+  padding: 0;
   cursor: pointer;
 }
-.material-icons{
+
+.material-icons {
   width: 50px;
 }
 
 /* About Page */
 .about-container {
-  display: flex;              
-  flex-direction: column;     
-  justify-content: center;    
-  align-items: center;        
-  height: 100vh;              
-  text-align: center;         
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin-top: 20px;
+
 }
+
 .about-text {
-  font-size: 1.8rem;          
-  line-height: 1.5;           
-  margin-bottom: 1.5rem;      
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
+
 .about-link {
-  font-size: 1.5rem;          
-  color: #0073b1;             
-  text-decoration: none;      
-  margin: 0.5rem 0;           
+  font-size: 1.5rem;
+  color: #0073b1;
+  text-decoration: none;
+  margin: 0.5rem 0;
 }
 
 .about-link:hover {
-  text-decoration: underline; 
-  color: #005c8e;             
+  text-decoration: underline;
+  color: #005c8e;
 }
 
 .taskBg {
@@ -153,7 +162,7 @@ margin-right: 20px;
 
 /* ItemDetails */
 .back-to-task-btn {
-  background-color: #4CAF50;  
+  background-color: #4CAF50;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -167,8 +176,9 @@ margin-right: 20px;
 }
 
 .back-to-task-btn:hover {
-  background-color: #45a049;  
+  background-color: #45a049;
 }
+
 .details {
   margin-top: 10px;
 }
@@ -180,7 +190,7 @@ margin-right: 20px;
   margin-left: 10px;
   margin-bottom: 6px;
   padding: 5px;
-  border-radius: 50%; 
+  border-radius: 50%;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
@@ -188,14 +198,15 @@ margin-right: 20px;
 
 .viewDetailsIcon:hover {
   opacity: 0.8;
-  background-color: #3b9bb8; 
+  background-color: #3b9bb8;
 }
 
 .update-form-container {
   position: relative;
-  z-index: 15; 
-  margin-top: 20px; 
+  z-index: 15;
+  margin-top: 20px;
 }
+
 .mr-20 {
   margin-right: 20px;
 }
@@ -207,6 +218,5 @@ footer {
   margin-top: auto;
   position: fixed;
   left: 0;
-  bottom: 0; 
+  bottom: 0;
 }
-

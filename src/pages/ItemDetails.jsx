@@ -6,7 +6,8 @@ const ItemDetails = ({ toDo }) => {
     const navigate = useNavigate();  
 
    
-    const task = toDo.find((task) => task.id === id);
+    const task = toDo.find((task) => task.id.toString() === id);
+
 
     if (!task) {
         return (
@@ -32,7 +33,7 @@ const ItemDetails = ({ toDo }) => {
             {task.title === "Create React to Do application" && (
                 <div>
                     <img 
-                        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXN6dXlidnRlcWUwYjVhcWs4YXdpYnIwMnRybm5vZTU0eTl5MzljNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/citBl9yPwnUOs/giphy.gif"  
+                        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3N4MGw4ZDJidnJkdHQzcTV2Zng4cnFteGd5NWdrZjN4eWp0ajJwaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/102h4wsmCG2s12/giphy.gif"  
                         alt="Create React Task GIF"
                         style={{ maxWidth: '300px', height: 'auto'}} 
                     />

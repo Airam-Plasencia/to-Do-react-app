@@ -1,5 +1,5 @@
 [
     { "id": "1", "title": "Read the project", "status": true, "description":"Read it again, I know you didnt understand it.." },
     { "id": "2", "title": "Create React to Do application ", "status": true, "description": "Study the basics of React and build a simple app." },
-    { "id": "3", "title": "Make a good presentation", "status": false, "description": "everything is going to be all right" }
+    { "id": "3", "title": "Make a good presentation", "status": false, "description": "Everything is going to be all right" }
 ]
