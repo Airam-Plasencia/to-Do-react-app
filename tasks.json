@@ -1,4 +1,4 @@
 [
     { "id": "1", "title": "Read the project", "status": true },
-    { "id": "2", "title": "Create React application using Vite", "status": false }
+    { "id": "2", "title": "Create React to Do application ", "status": false }
 ]

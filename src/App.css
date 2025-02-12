@@ -149,7 +149,11 @@ margin-right: 20px;
 .taskBg .iconsWrap span:hover {
   color: rgb(34, 82, 136);
 }
-
+.update-form-container {
+  position: relative;
+  z-index: 15; 
+  margin-top: 20px; 
+}
 .mr-20 {
   margin-right: 20px;
 }
@@ -161,7 +165,6 @@ footer {
   margin-top: auto;
   position: fixed;
   left: 0;
-  bottom: 0;
-  
+  bottom: 0; 
 }
 

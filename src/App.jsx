@@ -45,12 +45,12 @@ function App() {
   const markDone = (id) => {
     let newTask = toDo.map(task => {
       if (task.id === id) {
-        return ({ ...task, status: !task.status })
+        return { ...task, status: !task.status }; 
       }
       return task;
-    })
+    });
     setToDo(newTask);
-  }
+  };
 
   const cancelUpdate = () => {
     setUpdateData('');
@@ -76,13 +76,39 @@ function App() {
   return (
     <div className="App">
       <Sidebar />
-      <div className="main-content">
-        {!isErrorRoute && <Navbar />}
 
+      {!isErrorRoute && <Navbar />}
+      <div className="main-content">
 
         <Routes>
-          <Route path="/" element={<><h2 className="App-list">To Do List App</h2><AddTaskForm newTask={newTask} setNewTask={setNewTask} addTask={addTask} /><ToDo toDo={toDo} markDone={markDone} setUpdateData={setUpdateData} deleteTask={deleteTask} /></>} />
-          <Route path="/" element={<Dashboard />} />
+        <Route
+            path="/"
+            element={
+              <>
+                <h2 className="App-list">To Do List App</h2>
+                {updateData ? (
+                  <UpdateForm
+                    updateData={updateData}
+                    changeTask={changeTask}
+                    updateTask={updateTask}
+                    cancelUpdate={cancelUpdate}
+                  />
+                ) : (
+                  <AddTaskForm
+                    newTask={newTask}
+                    setNewTask={setNewTask}
+                    addTask={addTask}
+                  />
+                )}
+                <ToDo
+                  toDo={toDo}
+                  markDone={markDone}
+                  setUpdateData={setUpdateData}
+                  deleteTask={deleteTask}
+                />
+              </>
+            }
+          />
           <Route path="/About" element={<About />} />
           <Route path="/item/:id" element={<ItemDetails />} />
           <Route path="*" element={<Error404 />} />
