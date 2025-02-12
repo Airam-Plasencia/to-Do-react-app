@@ -70,6 +70,7 @@ margin-right: 20px;
 .material-icons{
   width: 50px;
 }
+
 /* About Page */
 .about-container {
   display: flex;              
@@ -149,6 +150,24 @@ margin-right: 20px;
 .taskBg .iconsWrap span:hover {
   color: rgb(34, 82, 136);
 }
+.viewDetailsIcon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-bottom: 6px;
+  padding: 5px;
+  border-radius: 50%; 
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.viewDetailsIcon:hover {
+  opacity: 0.8;
+  background-color: #3b9bb8; 
+}
+
 .update-form-container {
   position: relative;
   z-index: 15; 

@@ -1,18 +1,33 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
-const ItemDetails = () => {
+const ItemDetails = ({ toDo }) => {
+    const { id } = useParams();  
+    const navigate = useNavigate();  
 
-    const {id} = useParams ();
+   
+    const task = toDo.find((task) => task.id === id);
 
-    return ( 
-        
+    if (!task) {
+        return (
+            <div>
+                <p>Task not found</p>
+                <button onClick={() => navigate('/')}>Go back to tasks list</button>
+            </div>
+        );
+    }
+
+    return (
         <div>
-            <h2>Tasks Details</h2>
-            <p>Details of an item selected from {id}</p>
+            <h2>Task Details</h2>
+            <p><strong>Title:</strong> {task.title}</p>
+            <p><strong>Status:</strong> {task.status ? 'Completed' : 'Pending'}</p>
+            <p><strong>Description:</strong> {task.description || 'No description available'}</p>
             
+            <button onClick={() => navigate('/')}>Back to Task List</button>
         </div>
-     );
+    );
 }
- 
+
 export default ItemDetails;
+

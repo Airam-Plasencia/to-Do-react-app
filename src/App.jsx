@@ -110,7 +110,7 @@ function App() {
             }
           />
           <Route path="/About" element={<About />} />
-          <Route path="/item/:id" element={<ItemDetails />} />
+          <Route path="/item/:id" element={<ItemDetails toDo={toDo} />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
 
