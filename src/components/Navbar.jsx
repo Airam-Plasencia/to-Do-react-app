@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="navbar">
+      <div className="check">
         <div className="nav-cont">
           <div >
             <a href="./">

@@ -19,7 +19,7 @@ const ItemDetails = ({ toDo }) => {
     }
 
     return (
-        <div>
+        <div className='project'>
              {task.title === "Read the project" && (
                 <div>
                     <img 

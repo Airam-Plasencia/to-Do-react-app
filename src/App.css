@@ -27,10 +27,10 @@ body {
 
 /* Navbar */
 
-.navbar {
+.check {
   width: 100%;
   background-color: rgb(59, 99, 174);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -84,8 +84,8 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  margin-top: 20px;
-
+  margin-top: 40px;
+  margin-right: 80px;
 }
 
 .about-text {
@@ -207,6 +207,11 @@ body {
   margin-top: 20px;
 }
 
+.project {
+  margin-top: 45px;
+  margin-right: 60px;
+}
+
 .mr-20 {
   margin-right: 20px;
 }
@@ -219,4 +224,7 @@ footer {
   position: fixed;
   left: 0;
   bottom: 0;
+}
+.footer-github{
+  text-decoration: none;
 }
